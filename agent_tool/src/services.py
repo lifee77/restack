@@ -7,6 +7,7 @@ from src.functions.lookup_sales import lookupSales
 from src.functions.llm_chat import llm_chat
 
 from src.agents.chat_tool_functions import AgentChatToolFunctions
+from src.functions.recommend_products import recommend_products
 # Step 5: Import a new function to tool calling here
 # from src.functions.new_function import new_function, FunctionInput, FunctionOutput
 
@@ -15,7 +16,7 @@ async def main():
     await client.start_service(
         workflows=[AgentChatToolFunctions],
         ## Step 6: Add your new function to the functions list -> functions=[lookupSales, llm_chat, new_function]
-        functions=[lookupSales, llm_chat]
+        functions=[lookupSales, llm_chat, recommend_products]
     )
 
 def run_services():
